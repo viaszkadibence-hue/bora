@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Direktbuchung für die BoRa Apartments in Villach." />
+    <title>Jetzt buchen — BoRa Apartments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="booking.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="BoRa Apartments, home"><span>Bo</span>Ra<sup>®</sup></a>
+      <p class="header-title" data-t="headerTitle">Direkt buchen</p>
+      <div class="header-actions"><label class="language-picker"><span class="sr-only">Language</span><select id="languageSelect" aria-label="Choose language"><option value="de">DE</option><option value="en">EN</option><option value="hu">HU</option><option value="it">IT</option><option value="sl">SL</option></select></label><a class="back-home" href="index.html"><span>←</span> <b data-t="backHome">Startseite</b></a></div>
+    </header>
+
+    <main>
+      <section class="booking-hero">
+        <div class="hero-image"><img src="https://boraapartments.at/wp-content/uploads/2025/08/Beige-Simple-Interior-Mood-Board-A4-Landscape5-e1759700725813-1024x672.jpg" alt="BoRa Apartment interior" /></div><div class="hero-shade"></div>
+        <div class="hero-content"><p class="eyebrow" data-t="heroEyebrow">Your stay, thoughtfully planned</p><h1 data-html="heroTitle">Make room<br>for <em>your time away.</em></h1><p data-t="heroCopy">Wählen Sie Ihre Reisedaten und entdecken Sie das Apartment, das zu Ihrer Auszeit in Villach passt.</p></div>
+        <p class="hero-mark">BoRa<br><em>Stay</em></p>
+      </section>
+
+      <section class="search-area" aria-labelledby="search-heading">
+        <div class="search-intro"><p class="eyebrow" data-t="searchEyebrow">Find your BoRa</p><h2 id="search-heading" data-html="searchTitle">Ihre Reise,<br><em>Ihr Rhythmus.</em></h2></div>
+        <form class="search-card" id="bookingForm" novalidate>
+          <div class="field"><label for="checkIn" data-t="checkIn">Anreise</label><input id="checkIn" name="checkIn" type="date" required /></div>
+          <div class="field"><label for="checkOut" data-t="checkOut">Abreise</label><input id="checkOut" name="checkOut" type="date" required /></div>
+          <div class="field guests-field"><label for="guests" data-t="guests">Gäste</label><select id="guests" name="guests"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option></select><small data-t="maxGuests">max. 4 pro Apartment</small></div>
+          <button class="search-button" type="submit"><span data-t="searchButton">Apartments finden</span> <i>→</i></button>
+          <p class="form-error" id="formError" role="alert" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="results wrap" id="results">
+        <div class="results-head"><div><p class="eyebrow" data-t="resultsEyebrow">Your selection</p><h2 data-html="resultsTitle">Drei Orte<br>zum <em>Ankommen.</em></h2></div><p class="trip-label" id="tripLabel" aria-live="polite"></p></div>
+        <div class="apartments" id="apartments"></div>
+        <p class="results-note" data-t="resultsNote">Die finale Verfügbarkeit und der Gesamtpreis werden im sicheren Buchungsschritt bestätigt.</p>
+      </section>
+
+      <section class="how-it-works">
+        <div class="wrap"><p class="eyebrow" data-t="howEyebrow">Clear from the first click</p><div class="steps"><article><b>01</b><h3 data-t="step1Title">Daten wählen</h3><p data-t="step1Copy">Sagen Sie uns, wann und mit wie vielen Personen Sie reisen möchten.</p></article><article><b>02</b><h3 data-t="step2Title">Lieblingsort aussuchen</h3><p data-t="step2Copy">Vergleichen Sie unsere drei Apartments und wählen Sie Ihren Stil.</p></article><article><b>03</b><h3 data-t="step3Title">Sicher abschließen</h3><p data-t="step3Copy">Im nächsten Schritt sehen Sie Preis und Echtzeit-Verfügbarkeit.</p></article></div></div>
+      </section>
+
+      <section class="stay-summary" id="summary">
+        <div class="summary-image"><img src="https://boraapartments.at/wp-content/uploads/2025/08/Beige-Simple-Interior-Mood-Board-A4-Landscape3-e1764627141977-1024x678.jpg" alt="BoRa Apartments Atmosphäre" /></div><div class="summary-shade"></div>
+        <div class="summary-content"><p class="eyebrow" data-t="summaryEyebrow">Your BoRa stay</p><h2 id="summaryApartment" data-html="summaryTitle">Choose an<br><em>apartment.</em></h2><div class="summary-details"><p id="summaryDates">—</p><p id="summaryGuests">—</p></div><a class="book-button" id="secureBooking" href="https://boraapartments.at/rental-search/" target="_blank" rel="noreferrer"><span data-t="secureButton">Zum sicheren Buchungsschritt</span> <i>↗</i></a><p class="summary-note" data-t="summaryNote">Direkt bei BoRa buchen · 30 % Anzahlung zur Bestätigung</p></div>
+      </section>
+    </main>
+
+    <footer><a class="brand" href="index.html"><span>Bo</span>Ra<sup>®</sup></a><div><a href="mailto:info@boraapartments.at">info@boraapartments.at</a><a href="tel:+4369910833083">+43 699 108 330 83</a></div><div><a href="https://www.instagram.com/bora.apartment/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://www.facebook.com/profile.php?id=100078598857969" target="_blank" rel="noreferrer">Facebook ↗</a></div><p>© 2026 BoRa Apartments</p></footer>
+    <script src="booking.js"></script>
+  </body>
+</html>
