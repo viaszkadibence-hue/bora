@@ -1,0 +1,104 @@
+{
+  "meals": [
+    {
+      "id": "a7f5446d-52b1-4a65-a584-2e6bde5581c2",
+      "createdAt": "2026-08-09T09:54:02.795Z",
+      "text": "2 db zsömlét es 4darad teljes csirkét sült bör nélkül az egész csirke darabja 800g volt",
+      "estimate": {
+        "status": "ok",
+        "food": "csirkemell (sült, bőr nélkül)",
+        "grams": 800,
+        "macros": {
+          "kcal": 1320,
+          "protein": 248,
+          "carbs": 0,
+          "fat": 28.8
+        },
+        "kcalRange": [
+          1056,
+          1584
+        ],
+        "confidence": "alacsony",
+        "note": "Becslés tipikus tápértékek alapján."
+      }
+    },
+    {
+      "id": "7c58f9de-836f-4fbb-a52e-e1a8e5fae6a7",
+      "createdAt": "2026-08-09T10:03:44.701Z",
+      "text": "1000g csirkemel sült börnélkül",
+      "estimate": {
+        "status": "ok",
+        "food": "csirkemell (sült, bőr nélkül)",
+        "grams": 1000,
+        "macros": {
+          "kcal": 1650,
+          "protein": 310,
+          "carbs": 0,
+          "fat": 36
+        },
+        "kcalRange": [
+          1320,
+          1980
+        ],
+        "confidence": "alacsony",
+        "note": "Becslés tipikus tápértékek alapján."
+      }
+    }
+  ],
+  "water": [
+    {
+      "id": "14263f56-f883-4e5a-b746-1089566ef66b",
+      "createdAt": "2026-08-09T10:15:42.397Z",
+      "loggedDate": "2026-08-09",
+      "amountMl": 250
+    },
+    {
+      "id": "4827c801-4b74-4d3f-ab5d-54e3d5617f01",
+      "createdAt": "2026-08-09T10:15:43.258Z",
+      "loggedDate": "2026-08-09",
+      "amountMl": 250
+    },
+    {
+      "id": "9e7c2740-bdf8-4528-a636-10036f385ff8",
+      "createdAt": "2026-08-09T10:15:43.981Z",
+      "loggedDate": "2026-08-09",
+      "amountMl": 250
+    },
+    {
+      "id": "f2c7a967-368c-4323-a37a-da4f2e905f88",
+      "createdAt": "2026-08-09T10:15:44.558Z",
+      "loggedDate": "2026-08-09",
+      "amountMl": 250
+    },
+    {
+      "id": "a45140e6-50eb-4e4e-a652-36c2b50c9ec0",
+      "createdAt": "2026-08-09T10:15:45.085Z",
+      "loggedDate": "2026-08-09",
+      "amountMl": 250
+    },
+    {
+      "id": "ee16c80d-cc49-4629-b6e3-aefb8dbd4e47",
+      "createdAt": "2026-08-09T10:15:45.615Z",
+      "loggedDate": "2026-08-09",
+      "amountMl": 250
+    },
+    {
+      "id": "319ebebe-dae6-4031-938c-72eb0f1bb5c4",
+      "createdAt": "2026-08-09T10:15:46.077Z",
+      "loggedDate": "2026-08-09",
+      "amountMl": 250
+    },
+    {
+      "id": "f0250a80-8d2b-4aed-abc4-0b3fe9d4b979",
+      "createdAt": "2026-08-09T10:15:46.561Z",
+      "loggedDate": "2026-08-09",
+      "amountMl": 250
+    }
+  ],
+  "goal": {
+    "dailyTarget": 3000,
+    "age": 17,
+    "sex": "male",
+    "updatedAt": "2026-08-09T10:17:13.943Z"
+  }
+}
