@@ -1,0 +1,10 @@
+{
+  "name": "BoRa Apartments",
+  "short_name": "BoRa",
+  "description": "Boutique apartments in Villach, Kärnten.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f0e9",
+  "theme_color": "#183f37",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

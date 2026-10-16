@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>BoRa Studio — admin szerkesztő</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="work.css" />
+  </head>
+  <body>
+    <header class="studio-topbar">
+      <a class="studio-brand" href="index.html" target="_blank" rel="noreferrer"><span>Bo</span>Ra <b>STUDIO</b></a>
+      <div class="studio-status"><i></i><span>Helyi módosítások aktívak</span></div>
+      <div class="studio-topbar__actions"><button class="quiet-button" id="exportButton" type="button">Export JSON</button><label class="quiet-button import-button">Import<input id="importInput" type="file" accept="application/json" /></label><button class="quiet-button danger" id="resetAllButton" type="button">Minden visszaállítása</button></div>
+    </header>
+
+    <main class="studio-shell">
+      <aside class="studio-sidebar">
+        <div class="page-field"><label for="pageSelect">Szerkesztett oldal</label><select id="pageSelect"></select></div>
+        <nav class="studio-tabs" aria-label="Szerkesztő eszközök">
+          <button class="is-active" data-tab="content" type="button"><span>01</span>Tartalom</button>
+          <button data-tab="images" type="button"><span>02</span>Képek</button>
+          <button data-tab="design" type="button"><span>03</span>Stílus</button>
+          <button data-tab="mobile" type="button"><span>04</span>Mobil & menü</button>
+          <button data-tab="advanced" type="button"><span>05</span>Haladó</button>
+        </nav>
+        <div class="sidebar-tip"><b>Élő előnézet</b><p>Minden változtatás azonnal elmentődik ebben a böngészőben. A vendégoldal frissítés után az új beállításokat használja.</p></div>
+      </aside>
+
+      <section class="studio-editor">
+        <div class="editor-heading"><p class="eyebrow" id="currentPageLabel">FŐOLDAL</p><h1>Szerkeszd a <em>részleteket.</em></h1></div>
+
+        <section class="editor-panel is-active" data-panel="content">
+          <div class="panel-intro"><h2>Szöveg & hivatkozás</h2><p>Adj meg bármilyen CSS kijelölőt, majd írd át a hozzá tartozó tartalmat. A gyors mezők az adott oldal legfontosabb elemeit töltik be.</p></div>
+          <div class="preset-row"><label for="contentPreset">Gyors mező</label><select id="contentPreset"></select></div>
+          <div class="form-grid"><label>CSS kijelölő<input id="contentSelector" placeholder=".hero h1" /></label><label>Mód<select id="contentKind"><option value="text">Szöveg</option><option value="html">Formázott szöveg (HTML)</option><option value="href">Link célja</option><option value="alt">Kép leírása</option></select></label></div>
+          <label>Új tartalom<textarea id="contentValue" rows="5" placeholder="Írd be az új szöveget…"></textarea></label><div class="button-row"><button class="primary-button" id="saveContentButton" type="button">Tartalom mentése <b>↗</b></button><button class="quiet-button" id="clearContentForm" type="button">Űrlap törlése</button></div>
+          <div class="saved-list" id="contentList"></div>
+        </section>
+
+        <section class="editor-panel" data-panel="images">
+          <div class="panel-intro"><h2>Képek cseréje</h2><p>Használhatsz külső kép-URL-t, vagy saját fájlt. A feltöltött fájl a böngésző helyi tárhelyében marad.</p></div>
+          <div class="form-grid"><label>CSS kijelölő<input id="imageSelector" placeholder=".hero-image img" /></label><label>Kép URL-je<input id="imageUrl" type="url" placeholder="https://…/uj-kep.jpg" /></label></div>
+          <label class="upload-box" for="imageUpload"><input id="imageUpload" type="file" accept="image/*" /><span>+ Saját kép feltöltése</span><small id="uploadName">PNG, JPG vagy WebP</small></label>
+          <div class="button-row"><button class="primary-button" id="saveImageButton" type="button">Kép mentése <b>↗</b></button></div><div class="saved-list" id="imageList"></div>
+        </section>
+
+        <section class="editor-panel" data-panel="design">
+          <div class="panel-intro"><h2>Arculat & elhelyezés</h2><p>Globális színekkel és oldalankénti CSS tulajdonságokkal pontosan hangolható a megjelenés.</p></div>
+          <div class="color-grid"><label>Mélyzöld<input id="themeInk" type="color" /></label><label>Világos alap<input id="themeCream" type="color" /></label><label>Akcentus<input id="themeAccent" type="color" /></label><label>Betűméret<input id="fontScale" type="range" min="85" max="120" step="1" /><output id="fontScaleOutput"></output></label></div>
+          <hr /><div class="form-grid triple"><label>CSS kijelölő<input id="styleSelector" placeholder=".hero h1" /></label><label>Tulajdonság<input id="styleProperty" placeholder="font-size" /></label><label>Érték<input id="styleValue" placeholder="74px" /></label></div><label>Érvényesítés<select id="styleScope"><option value="all">Minden nézet</option><option value="tablet">Tablet</option><option value="mobile">Mobil</option></select></label><div class="button-row"><button class="primary-button" id="saveStyleButton" type="button">Stílus mentése <b>↗</b></button></div><div class="saved-list" id="styleList"></div>
+        </section>
+
+        <section class="editor-panel" data-panel="mobile">
+          <div class="panel-intro"><h2>Mobil fejléc & menü</h2><p>Ezek a beállítások az összes BoRa oldalon egységesen működnek.</p></div>
+          <div class="form-grid triple"><label>Mobil logó (px)<input id="mobileLogo" type="number" min="12" max="64" /></label><label>Mobil menü betű (px)<input id="mobileMenuSize" type="number" min="24" max="100" /></label><label>Mobil fejléc belső margó<input id="mobilePadding" placeholder="17px 5.4vw" /></label></div><div class="form-grid triple"><label>Foglalás gomb színe<input id="mobileBookBackground" type="color" /></label><label>Menü panel színe<input id="mobileMenuPanel" type="color" /></label><label>Menü nyílása<select id="mobileMenuSide"><option value="right">Jobbról</option><option value="left">Balról</option></select></label></div>
+          <h3>Menü feliratai</h3><div class="menu-label-grid" id="menuLabels"></div><div class="button-row"><button class="primary-button" id="saveMobileButton" type="button">Mobil beállítások mentése <b>↗</b></button></div>
+        </section>
+
+        <section class="editor-panel" data-panel="advanced">
+          <div class="panel-intro"><h2>Haladó vezérlés</h2><p>Oldalspecifikus CSS a jelenlegi oldalhoz, valamint globális CSS az egész BoRa oldalcsaládhoz. Csak biztos CSS szabályokat ments ide.</p></div><label>Az aktuális oldal egyedi CSS-e<textarea id="pageCss" class="code-area" rows="8" placeholder=".hero h1 { letter-spacing: -0.08em; }"></textarea></label><label>Globális CSS minden oldalhoz<textarea id="globalCss" class="code-area" rows="8" placeholder=":root { --orange: #da6846; }"></textarea></label><div class="button-row"><button class="primary-button" id="saveCssButton" type="button">CSS mentése <b>↗</b></button><button class="quiet-button danger" id="resetPageButton" type="button">Aktuális oldal visszaállítása</button></div>
+        </section>
+      </section>
+
+      <section class="studio-preview">
+        <div class="preview-toolbar"><div><span>Élő előnézet</span><b id="previewName">Főoldal</b></div><div class="viewport-switch" role="group" aria-label="Előnézeti méret"><button class="is-active" data-viewport="desktop" type="button">Asztali</button><button data-viewport="tablet" type="button">Tablet</button><button data-viewport="mobile" type="button">Mobil</button></div><a id="openPreview" href="index.html" target="_blank" rel="noreferrer">Megnyitás ↗</a></div>
+        <div class="preview-stage"><iframe id="previewFrame" title="BoRa oldal élő előnézete"></iframe></div>
+      </section>
+    </main>
+    <div class="studio-toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="work.js"></script>
+  </body>
+</html>

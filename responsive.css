@@ -1,0 +1,46 @@
+/* Home-specific responsive layer: keeps the bespoke BoRa design while using Bootstrap's breakpoints. */
+.floating-book{
+  position:fixed; right:22px; bottom:22px; z-index:30; display:inline-flex; align-items:center; gap:10px;
+  padding:14px 16px; border-radius:999px; background:var(--orange); color:#fff; box-shadow:0 15px 38px rgba(7,35,28,.25);
+  font:500 10px var(--mono); letter-spacing:.11em; text-decoration:none; text-transform:uppercase;
+  opacity:0; pointer-events:none; transform:translateY(16px); transition:opacity .28s ease,transform .28s ease,background .28s ease;
+}
+.floating-book.is-visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.floating-book:hover{background:var(--ink);color:#fff}.floating-book i{font:400 18px/1 var(--serif);font-style:normal}
+
+@media (max-width:991.98px){
+  .site-header{display:grid;grid-template-columns:minmax(72px,1fr) auto minmax(112px,1fr);grid-template-areas:"menu brand actions";align-items:start;padding:20px 5vw}
+  .site-header>.brand{grid-area:brand;align-self:center;justify-self:center;font-size:1.8rem}
+  .desktop-nav{display:none!important}
+  .site-header .menu-toggle{grid-area:menu;align-self:start;justify-self:start;display:flex!important;min-height:40px;margin:0;color:#fff}
+  .header-actions{grid-area:actions;display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-start;gap:9px}
+  .header-actions .header-book{order:1;display:inline-flex;align-items:center;gap:7px;border:0;background:var(--cream);color:var(--ink);padding:11px 12px;font-size:9px;line-height:1;white-space:nowrap;box-shadow:0 6px 18px rgba(8,29,25,.16)}
+  .header-book span{margin:0;font-size:14px;line-height:.6}
+  .header-actions .language-picker{order:2;display:block;padding-right:2px}
+  .language-picker select{padding:0 0 5px;color:#fff;font-size:9px;letter-spacing:.13em}
+  .site-menu{display:grid!important}
+  .site-menu-panel{max-width:520px;justify-self:end;width:68vw}
+}
+
+@media (max-width:575.98px){
+  .site-header{grid-template-columns:minmax(58px,1fr) auto minmax(108px,1fr);padding:17px 5.4vw}
+  .site-header>.brand{font-size:1.62rem}
+  .site-header .menu-toggle{gap:5px;font-size:9px;letter-spacing:.08em}.menu-toggle i{width:16px}
+  .header-actions{gap:8px}.header-actions .header-book{padding:10px 10px;font-size:8px;letter-spacing:.08em}.header-book span{font-size:13px}
+  .language-picker select{font-size:8px;padding-bottom:4px}
+  .site-menu-panel{width:100%;padding:24px 7% 30px}
+  .hero{min-height:630px;height:100svh}.hero-content{inset:0 6% 8.5%}.hero-index{bottom:17%;right:6%}
+  .hero-bottom{gap:20px;align-items:flex-end}.hero-bottom p{width:min(205px,67vw)}
+  .floating-book{right:14px;bottom:14px;padding:13px 15px}.floating-book span{display:none}
+}
+
+@media (min-width:576px) and (max-width:991.98px){
+  .site-menu{grid-template-columns:minmax(0,1fr) minmax(360px,52vw)}
+  .site-header{padding:24px 6vw}.site-header>.brand{font-size:2rem}.site-menu-panel{width:52vw}
+  .hero{min-height:680px}.hero-content{inset:0 8% 9%}.section-pad{padding:100px 8%}
+  .apartment-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}.apartment-card:nth-child(2){margin-top:72px}.apartment-card:nth-child(3){margin-top:0}.card-heaven{grid-column:1/2}
+  .experience-grid{grid-template-columns:1.1fr .9fr}.experience-image.tall{height:450px}.experience-copy{grid-column:1/-1;padding:12px 0 0}
+}
+
+@media (min-width:1400px){.site-header{padding-left:max(4.6%,calc((100vw - 1520px)/2));padding-right:max(4.6%,calc((100vw - 1520px)/2))}.section-pad{padding-left:max(8.3%,calc((100vw - 1520px)/2));padding-right:max(8.3%,calc((100vw - 1520px)/2))}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
